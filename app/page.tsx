@@ -288,9 +288,7 @@ export default function Home() {
             </p>
 
             <p>
-              As the practice grows, BlueOaks Health is committed to building a
-              trusted team of qualified providers delivering respectful,
-              patient-centered care across Texas.
+              Our approach focuses on improving access to high-quality psychiatric care through flexible visit options designed around patient needs.
             </p>
           </div>
         </div>
