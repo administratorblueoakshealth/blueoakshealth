@@ -712,7 +712,7 @@ function TeamCard({
       <img
           src={image}
           alt={name}
-          className="h-64 w-full object-contain bg-slate-100 p-4"
+          className="h-72 w-full object-contain bg-slate-100 p-4"
         />
 
       <div className="p-6">
