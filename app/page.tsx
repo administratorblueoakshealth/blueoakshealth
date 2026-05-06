@@ -232,29 +232,37 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="rounded-3xl bg-white p-6 shadow-xl shadow-slate-200/70">
-            <div className="rounded-2xl bg-slate-900 p-7 text-white">
-              <p className="text-sm font-medium text-emerald-300">
-                Care designed around access
-              </p>
-              <h2 className="mt-3 text-3xl font-bold">
-                Support where patients are.
-              </h2>
-              <p className="mt-4 leading-7 text-slate-300">
-                Flexible psychiatric care options for patients who need support
-                at home, in an outpatient setting, or virtually.
-              </p>
-            </div>
+          <div className="overflow-hidden rounded-3xl bg-white shadow-xl shadow-slate-200/70">
+            <img
+              src="/hero-psychiatry.jpg"
+              alt="Compassionate psychiatric care"
+              className="h-72 w-full object-cover"
+            />
 
-            <div className="mt-6 grid gap-4">
-              {careOptions.map((option) => (
-                <Feature
-                  key={option.title}
-                  icon={option.icon}
-                  title={option.title}
-                  text={option.text}
-                />
-              ))}
+            <div className="p-6">
+              <div className="rounded-2xl bg-slate-900 p-7 text-white">
+                <p className="text-sm font-medium text-emerald-300">
+                  Care designed around access
+                </p>
+                <h2 className="mt-3 text-3xl font-bold">
+                  Support where patients are.
+                </h2>
+                <p className="mt-4 leading-7 text-slate-300">
+                  Flexible psychiatric care options for patients who need
+                  support at home, in an outpatient setting, or virtually.
+                </p>
+              </div>
+
+              <div className="mt-6 grid gap-4">
+                {careOptions.map((option) => (
+                  <Feature
+                    key={option.title}
+                    icon={option.icon}
+                    title={option.title}
+                    text={option.text}
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -284,7 +292,15 @@ export default function Home() {
       </section>
 
       <section className="bg-slate-50 py-20">
-        <div className="mx-auto grid max-w-7xl gap-10 px-6 md:grid-cols-2 md:items-center">
+        <div className="mx-auto grid max-w-7xl gap-14 px-6 md:grid-cols-2 md:items-center">
+          <div className="relative">
+            <img
+              src="/provider.jpg"
+              alt="BlueOaks Health provider"
+              className="w-full rounded-3xl object-cover shadow-xl"
+            />
+          </div>
+
           <div>
             <p className="text-sm font-semibold uppercase tracking-wide text-emerald-700">
               About BlueOaks Health
@@ -293,27 +309,28 @@ export default function Home() {
               A growing healthcare practice focused on access, dignity, and
               continuity of care.
             </h2>
-          </div>
 
-          <div className="space-y-4 leading-8 text-slate-600">
-            <p>
-              BlueOak Psychiatry PLLC provides compassionate, evidence-based
-              psychiatric care for individuals seeking support with mental
-              health concerns, medication management, and ongoing treatment
-              planning.
-            </p>
+            <div className="mt-6 space-y-4 leading-8 text-slate-600">
+              <p>
+                BlueOak Psychiatry PLLC provides compassionate, evidence-based
+                psychiatric care for individuals seeking support with mental
+                health concerns, medication management, and ongoing treatment
+                planning.
+              </p>
 
-            <p>
-              Our goal is to reduce barriers to care by offering multiple visit
-              options, including outpatient appointments, telehealth visits, and
-              select home-based psychiatric care for eligible patients.
-            </p>
+              <p>
+                Our goal is to reduce barriers to care by offering multiple
+                visit options, including outpatient appointments, telehealth
+                visits, and select home-based psychiatric care for eligible
+                patients.
+              </p>
 
-            <p>
-              Our approach focuses on improving access to high-quality
-              psychiatric care through flexible visit options designed around
-              patient needs.
-            </p>
+              <p>
+                Our approach focuses on improving access to high-quality
+                psychiatric care through flexible visit options designed around
+                patient needs.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -332,10 +349,12 @@ export default function Home() {
             {steps.map((step, index) => (
               <div
                 key={step.title}
-                className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
+                className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
               >
                 <div className="flex items-center justify-between">
-                  <div className="text-emerald-700">{step.icon}</div>
+                  <div className="inline-flex rounded-2xl bg-emerald-50 p-3 text-emerald-700">
+                    {step.icon}
+                  </div>
                   <span className="rounded-full bg-slate-100 px-3 py-1 text-sm font-semibold text-slate-500">
                     0{index + 1}
                   </span>
@@ -385,7 +404,7 @@ export default function Home() {
             {services.map((service) => (
               <div
                 key={service}
-                className="flex items-start gap-3 rounded-2xl border border-slate-200 p-5"
+                className="flex items-start gap-3 rounded-2xl border border-slate-200 p-5 transition hover:-translate-y-1 hover:shadow-md"
               >
                 <CheckCircle
                   className="mt-1 shrink-0 text-emerald-600"
@@ -618,7 +637,9 @@ function Feature({
 }) {
   return (
     <div className="flex gap-4 rounded-2xl bg-slate-50 p-5">
-      <div className="text-emerald-700">{icon}</div>
+      <div className="inline-flex h-fit rounded-2xl bg-emerald-50 p-3 text-emerald-700">
+        {icon}
+      </div>
       <div>
         <h3 className="font-semibold">{title}</h3>
         <p className="mt-1 text-sm leading-6 text-slate-600">{text}</p>
@@ -637,8 +658,10 @@ function InfoCard({
   text: React.ReactNode;
 }) {
   return (
-    <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-      <div className="mb-4 text-emerald-700">{icon}</div>
+    <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+      <div className="mb-4 inline-flex rounded-2xl bg-emerald-50 p-3 text-emerald-700">
+        {icon}
+      </div>
       <h3 className="text-lg font-semibold">{title}</h3>
       <p className="mt-2 leading-7 text-slate-600">{text}</p>
     </div>
