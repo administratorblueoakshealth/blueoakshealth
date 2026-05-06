@@ -709,7 +709,11 @@ function TeamCard({
 }) {
   return (
     <div className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
-      <img src={image} alt={name} className="h-80 w-full object-cover" />
+      <img
+          src={image}
+          alt={name}
+          className="h-72 w-full object-contain bg-slate-100 p-4"
+        />
 
       <div className="p-6">
         <p className="text-sm font-semibold uppercase tracking-wide text-emerald-700">
