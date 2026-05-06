@@ -1,3 +1,5 @@
+import type React from "react";
+
 import {
   Calendar,
   MapPin,
@@ -30,6 +32,21 @@ const practice = {
   serviceArea:
     "Home visits in San Antonio · Outpatient services · Telehealth across Texas",
 };
+
+const team = [
+  {
+    name: "Tumininu M. Adeleke, PMHNP-BC",
+    role: "Psychiatric Mental Health Nurse Practitioner",
+    image: "/tumininu.jpg",
+    bio: "Tumininu M. Adeleke, PMHNP-BC provides compassionate psychiatric care focused on accessibility, medication management, and individualized treatment planning. Services may include psychiatric evaluations, outpatient care, telehealth visits, and select home-based psychiatric services for eligible patients.",
+  },
+  {
+    name: "Jessica Lynn Beachkofsky, MD",
+    role: "Supervising Physician",
+    image: "/jessica-md.jpg",
+    bio: "Dr. Jessica Lynn Beachkofsky serves as supervising physician supporting collaborative psychiatric care, clinical oversight, and continuity of treatment services provided through BlueOaks Health.",
+  },
+];
 
 const services = [
   "Psychiatric evaluations",
@@ -331,6 +348,37 @@ export default function Home() {
                 patient needs.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white py-20">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="max-w-3xl">
+            <p className="text-sm font-semibold uppercase tracking-wide text-emerald-700">
+              Meet Our Team
+            </p>
+            <h2 className="mt-3 text-3xl font-bold">
+              Compassionate psychiatric professionals focused on accessible,
+              patient-centered care.
+            </h2>
+            <p className="mt-4 leading-7 text-slate-600">
+              BlueOaks Health is supported by psychiatric clinicians and
+              physician collaboration focused on safe, respectful, and
+              continuous mental health care.
+            </p>
+          </div>
+
+          <div className="mt-10 grid gap-6 md:grid-cols-2">
+            {team.map((member) => (
+              <TeamCard
+                key={member.name}
+                name={member.name}
+                role={member.role}
+                image={member.image}
+                bio={member.bio}
+              />
+            ))}
           </div>
         </div>
       </section>
@@ -643,6 +691,32 @@ function Feature({
       <div>
         <h3 className="font-semibold">{title}</h3>
         <p className="mt-1 text-sm leading-6 text-slate-600">{text}</p>
+      </div>
+    </div>
+  );
+}
+
+function TeamCard({
+  image,
+  name,
+  role,
+  bio,
+}: {
+  image: string;
+  name: string;
+  role: string;
+  bio: string;
+}) {
+  return (
+    <div className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+      <img src={image} alt={name} className="h-80 w-full object-cover" />
+
+      <div className="p-6">
+        <p className="text-sm font-semibold uppercase tracking-wide text-emerald-700">
+          {role}
+        </p>
+        <h3 className="mt-2 text-2xl font-bold text-slate-950">{name}</h3>
+        <p className="mt-4 leading-7 text-slate-600">{bio}</p>
       </div>
     </div>
   );
