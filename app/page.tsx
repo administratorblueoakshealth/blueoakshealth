@@ -14,6 +14,7 @@ import {
   AlertTriangle,
   ArrowRight,
   ClipboardCheck,
+  LogIn,
 } from "lucide-react";
 
 const practice = {
@@ -22,7 +23,9 @@ const practice = {
   phone: "(210) 981-5702",
   email: "info@blueoakshealth.com",
   appointmentsEmail: "appointments@blueoakshealth.com",
-  bookingUrl: "https://calendly.com/blueoakspsych/30min",
+  bookingUrl:
+    "https://www.optimantra.com/optimus/patient/patientaccess/servicesall?pid=VVBzQkwwWXRmQUU3YlpDand2dnc0QT09&lid=WmRURXpWbUxtWndzb0x6RjhpdThTdz09",
+  patientPortalUrl: "https://www.optimantra.com/optimus/om/patient/login",
   location: "San Antonio, TX",
   serviceArea:
     "Home visits in San Antonio · Outpatient services · Telehealth across Texas",
@@ -90,7 +93,7 @@ const steps = [
   {
     icon: <Calendar />,
     title: "Request an appointment",
-    text: "Choose a time online or contact the office for current availability.",
+    text: "Use the secure scheduling portal or contact the office for current availability.",
   },
   {
     icon: <ClipboardCheck />,
@@ -141,10 +144,19 @@ export default function Home() {
 
           <div className="hidden items-center gap-4 md:flex">
             <a
-              href={`tel:2109815702`}
+              href="tel:2109815702"
               className="text-sm font-medium text-slate-600 hover:text-slate-900"
             >
               {practice.phone}
+            </a>
+
+            <a
+              href={practice.patientPortalUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-full border border-slate-300 bg-white px-5 py-2 text-sm font-semibold text-slate-900 hover:bg-slate-100"
+            >
+              Patient Portal
             </a>
 
             <a
@@ -153,7 +165,7 @@ export default function Home() {
               rel="noopener noreferrer"
               className="rounded-full bg-slate-900 px-5 py-2 text-sm font-semibold text-white shadow-sm hover:bg-slate-700"
             >
-              Book Appointment
+              Request Appointment
             </a>
           </div>
         </div>
@@ -188,6 +200,16 @@ export default function Home() {
               >
                 <Calendar size={18} />
                 Request Appointment
+              </a>
+
+              <a
+                href={practice.patientPortalUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-slate-300 bg-white px-6 py-3 font-semibold hover:bg-slate-100"
+              >
+                <LogIn size={18} />
+                Patient Portal
               </a>
 
               <a
@@ -288,7 +310,9 @@ export default function Home() {
             </p>
 
             <p>
-              Our approach focuses on improving access to high-quality psychiatric care through flexible visit options designed around patient needs.
+              Our approach focuses on improving access to high-quality
+              psychiatric care through flexible visit options designed around
+              patient needs.
             </p>
           </div>
         </div>
@@ -377,7 +401,9 @@ export default function Home() {
       <section className="bg-slate-50 py-20">
         <div className="mx-auto max-w-7xl px-6">
           <div className="max-w-3xl">
-            <h2 className="text-3xl font-bold">Conditions Commonly Addressed</h2>
+            <h2 className="text-3xl font-bold">
+              Conditions Commonly Addressed
+            </h2>
             <p className="mt-4 leading-7 text-slate-600">
               Care may include evaluation and treatment planning for common
               mental health concerns.
@@ -429,21 +455,38 @@ export default function Home() {
       <section id="booking" className="bg-white py-20">
         <div className="mx-auto max-w-7xl px-6">
           <div className="mx-auto max-w-3xl text-center">
-            <h2 className="text-3xl font-bold">Schedule Your Appointment</h2>
-            <p className="mt-4 leading-7 text-slate-600">
-              Choose a time that works for you. Please do not include sensitive
-              medical information, diagnoses, medications, or emergency concerns
-              when booking.
+            <p className="text-sm font-semibold uppercase tracking-wide text-emerald-700">
+              Secure scheduling
             </p>
-          </div>
+            <h2 className="mt-3 text-3xl font-bold">
+              Schedule through OptiMantra
+            </h2>
+            <p className="mt-4 leading-7 text-slate-600">
+              Request an appointment through the secure patient access portal.
+              Please do not include emergency concerns through online booking.
+            </p>
 
-          <div className="mt-10 overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">
-            <iframe
-              src={practice.bookingUrl}
-              width="100%"
-              height="800"
-              title="Schedule appointment with BlueOak Psychiatry PLLC"
-            />
+            <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+              <a
+                href={practice.bookingUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-slate-900 px-6 py-3 font-semibold text-white shadow-sm hover:bg-slate-700"
+              >
+                Request Appointment
+                <ArrowRight size={18} />
+              </a>
+
+              <a
+                href={practice.patientPortalUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-slate-300 bg-white px-6 py-3 font-semibold hover:bg-slate-100"
+              >
+                <LogIn size={18} />
+                Patient Portal
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -513,6 +556,16 @@ export default function Home() {
             >
               Request Appointment
               <ArrowRight size={18} />
+            </a>
+
+            <a
+              href={practice.patientPortalUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-white/30 px-6 py-3 font-semibold text-white hover:bg-white/10"
+            >
+              <LogIn size={18} />
+              Patient Portal
             </a>
 
             <a
