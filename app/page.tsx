@@ -1,5 +1,3 @@
-import type React from "react";
-
 import {
   Calendar,
   MapPin,
@@ -31,11 +29,6 @@ const practice = {
   location: "San Antonio, TX",
   serviceArea:
     "Home visits in San Antonio · Outpatient services · Telehealth across Texas",
-};
-
-const images = {
-  hero: "/hero-psychiatry.jpg",
-  provider: "/provider.jpg",
 };
 
 const services = [
@@ -136,10 +129,6 @@ const faqs = [
     a: "No. Call 911 or 988 for crisis support.",
   },
 ];
-
-function hideBrokenImage(event: React.SyntheticEvent<HTMLImageElement>) {
-  event.currentTarget.style.display = "none";
-}
 
 export default function Home() {
   return (
@@ -245,9 +234,8 @@ export default function Home() {
 
           <div className="overflow-hidden rounded-3xl bg-white shadow-xl shadow-slate-200/70">
             <img
-              src={images.hero}
-              alt=""
-              onError={hideBrokenImage}
+              src="/hero-psychiatry.jpg"
+              alt="Compassionate psychiatric care"
               className="h-72 w-full object-cover"
             />
 
@@ -305,12 +293,11 @@ export default function Home() {
 
       <section className="bg-slate-50 py-20">
         <div className="mx-auto grid max-w-7xl gap-14 px-6 md:grid-cols-2 md:items-center">
-          <div className="relative overflow-hidden rounded-3xl bg-white shadow-xl">
+          <div className="relative">
             <img
-              src={images.provider}
-              alt=""
-              onError={hideBrokenImage}
-              className="h-full w-full object-cover"
+              src="/provider.jpg"
+              alt="BlueOaks Health provider"
+              className="w-full rounded-3xl object-cover shadow-xl"
             />
           </div>
 
