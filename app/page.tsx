@@ -110,17 +110,17 @@ const steps = [
   {
     icon: <Calendar />,
     title: "Request an appointment",
-    text: "Use the secure scheduling portal or contact the office for current availability.",
+    text: "New patients begin by selecting a visit type and available appointment time through our secure scheduling portal.",
   },
   {
     icon: <ClipboardCheck />,
-    title: "Confirm visit type",
-    text: "We review whether home visit, outpatient, or telehealth care is appropriate.",
+    title: "Complete intake information",
+    text: "After selecting a time, you may be asked to provide demographics, insurance, payment, and basic appointment information.",
   },
   {
-    icon: <HeartPulse />,
-    title: "Begin care",
-    text: "Receive evaluation, treatment planning, medication support, and follow-up care.",
+    icon: <LogIn />,
+    title: "Use the portal after booking",
+    text: "Existing patients can use the patient portal for forms, messages, appointment details, and telehealth access.",
   },
 ];
 
@@ -173,7 +173,7 @@ export default function Home() {
               rel="noopener noreferrer"
               className="rounded-full border border-slate-300 bg-white px-5 py-2 text-sm font-semibold text-slate-900 hover:bg-slate-100"
             >
-              Patient Portal
+              Existing Patient Login
             </a>
 
             <a
@@ -226,7 +226,7 @@ export default function Home() {
                 className="inline-flex items-center justify-center gap-2 rounded-full border border-slate-300 bg-white px-6 py-3 font-semibold hover:bg-slate-100"
               >
                 <LogIn size={18} />
-                Patient Portal
+                Existing Patient Login
               </a>
 
               <a
@@ -388,8 +388,9 @@ export default function Home() {
           <div className="max-w-3xl">
             <h2 className="text-3xl font-bold">How It Works</h2>
             <p className="mt-4 leading-7 text-slate-600">
-              Getting started is simple. Appointment type and eligibility are
-              reviewed based on clinical need, location, and availability.
+              New patients start with an appointment request. Existing patients
+              can use the patient portal for forms, messages, appointment
+              details, and telehealth access.
             </p>
           </div>
 
@@ -523,14 +524,15 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-6">
           <div className="mx-auto max-w-3xl text-center">
             <p className="text-sm font-semibold uppercase tracking-wide text-emerald-700">
-              Secure scheduling
+              New Patients
             </p>
-            <h2 className="mt-3 text-3xl font-bold">
-              Schedule through OptiMantra
-            </h2>
+
+            <h2 className="mt-3 text-3xl font-bold">Request an Appointment</h2>
+
             <p className="mt-4 leading-7 text-slate-600">
-              Request an appointment through the secure patient access portal.
-              Please do not include emergency concerns through online booking.
+              New patients can request an appointment through our secure
+              scheduling system. Please do not use online scheduling for
+              emergencies or urgent crisis concerns.
             </p>
 
             <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
@@ -551,9 +553,16 @@ export default function Home() {
                 className="inline-flex items-center justify-center gap-2 rounded-full border border-slate-300 bg-white px-6 py-3 font-semibold hover:bg-slate-100"
               >
                 <LogIn size={18} />
-                Patient Portal
+                Existing Patient Login
               </a>
             </div>
+
+            <p className="mx-auto mt-6 max-w-2xl text-sm text-slate-500">
+              The patient portal is intended for patients who have already
+              scheduled or established care. Do not submit emergency concerns,
+              highly sensitive details, or urgent clinical issues through
+              website links.
+            </p>
           </div>
         </div>
       </section>
@@ -632,7 +641,7 @@ export default function Home() {
               className="inline-flex items-center justify-center gap-2 rounded-full border border-white/30 px-6 py-3 font-semibold text-white hover:bg-white/10"
             >
               <LogIn size={18} />
-              Patient Portal
+              Existing Patient Login
             </a>
 
             <a
@@ -668,7 +677,7 @@ export default function Home() {
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 rounded-full bg-slate-900 px-6 py-3 text-white shadow-lg hover:bg-slate-700"
       >
-        Book Now
+        Request Appointment
       </a>
     </main>
   );
@@ -710,10 +719,10 @@ function TeamCard({
   return (
     <div className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
       <img
-          src={image}
-          alt={name}
-          className="h-72 w-full object-contain bg-slate-100 p-4"
-        />
+        src={image}
+        alt={name}
+        className="h-72 w-full bg-slate-100 object-contain p-4"
+      />
 
       <div className="p-6">
         <p className="text-sm font-semibold uppercase tracking-wide text-emerald-700">
