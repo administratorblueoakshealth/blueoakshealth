@@ -1,14 +1,8 @@
 import {
   Calendar,
-  Brain,
-  Shield,
-  HeartPulse,
-  MessageCircle,
-  CheckCircle,
   MapPin,
   Phone,
   Mail,
-  AlertTriangle,
   Home as HomeIcon,
   Video,
   Building2,
@@ -17,7 +11,8 @@ import {
 const practice = {
   name: "BlueOak Psychiatry PLLC",
   phone: "(210) 868-4788",
-  email: "a.adetunji44@outlook.com",
+  email: "info@blueoakshealth.com",
+  appointmentsEmail: "appointments@blueoakshealth.com",
   bookingUrl: "https://calendly.com/blueoakspsych/30min",
   location: "San Antonio, TX",
   serviceArea:
@@ -90,8 +85,6 @@ const faqs = [
 export default function Home() {
   return (
     <main className="min-h-screen bg-slate-50 text-slate-900">
-
-      {/* HEADER */}
       <header className="sticky top-0 z-50 border-b bg-white/90 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
           <div>
@@ -104,6 +97,7 @@ export default function Home() {
           <a
             href={practice.bookingUrl}
             target="_blank"
+            rel="noopener noreferrer"
             className="hidden rounded-full bg-slate-900 px-5 py-2 text-white sm:inline-flex"
           >
             Book Appointment
@@ -111,7 +105,6 @@ export default function Home() {
         </div>
       </header>
 
-      {/* HERO */}
       <section className="mx-auto grid max-w-6xl gap-10 px-6 py-20 md:grid-cols-2">
         <div>
           <h1 className="text-5xl font-bold">
@@ -127,14 +120,15 @@ export default function Home() {
             <a
               href={practice.bookingUrl}
               target="_blank"
-              className="bg-black text-white px-6 py-3 rounded-full"
+              rel="noopener noreferrer"
+              className="rounded-full bg-black px-6 py-3 text-white"
             >
               Book Appointment
             </a>
 
             <a
               href={`mailto:${practice.email}`}
-              className="border px-6 py-3 rounded-full"
+              className="rounded-full border px-6 py-3"
             >
               Contact
             </a>
@@ -145,7 +139,6 @@ export default function Home() {
           </div>
         </div>
 
-        {/* CARE MODEL */}
         <div className="rounded-3xl bg-white p-6 shadow-sm">
           <Feature
             icon={<HomeIcon />}
@@ -165,94 +158,132 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SERVICES */}
       <section className="bg-white py-20">
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="mx-auto max-w-6xl px-6">
           <h2 className="text-3xl font-bold">Services</h2>
 
-          <div className="grid gap-4 mt-6 md:grid-cols-3">
-            {services.map((s) => (
-              <div key={s} className="p-5 border rounded-xl">
-                {s}
+          <div className="mt-6 grid gap-4 md:grid-cols-3">
+            {services.map((service) => (
+              <div key={service} className="rounded-xl border p-5">
+                {service}
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CONDITIONS */}
-      <section className="py-20 max-w-6xl mx-auto px-6">
+      <section className="mx-auto max-w-6xl px-6 py-20">
         <h2 className="text-3xl font-bold">Conditions Commonly Addressed</h2>
 
-        <div className="flex flex-wrap gap-3 mt-6">
-          {conditions.map((c) => (
-            <span key={c} className="bg-white px-4 py-2 rounded-full shadow">
-              {c}
+        <div className="mt-6 flex flex-wrap gap-3">
+          {conditions.map((condition) => (
+            <span
+              key={condition}
+              className="rounded-full bg-white px-4 py-2 shadow"
+            >
+              {condition}
             </span>
           ))}
         </div>
       </section>
 
-      {/* INSURANCE */}
       <section className="bg-slate-100 py-20">
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="mx-auto max-w-6xl px-6">
           <h2 className="text-3xl font-bold">Insurance & Payment</h2>
 
-          <div className="grid gap-4 mt-6 md:grid-cols-3">
-            {insurance.map((i) => (
-              <div key={i} className="p-5 bg-white rounded-xl">
-                {i}
+          <div className="mt-6 grid gap-4 md:grid-cols-3">
+            {insurance.map((item) => (
+              <div key={item} className="rounded-xl bg-white p-5">
+                {item}
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* BOOKING */}
-      <section className="py-20">
-        <iframe src={practice.bookingUrl} width="100%" height="700" />
-      </section>
+      <section className="bg-white py-20">
+        <div className="mx-auto max-w-6xl px-6">
+          <h2 className="text-center text-3xl font-bold">
+            Schedule Your Appointment
+          </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-center text-slate-600">
+            Please do not include sensitive medical information, diagnoses,
+            medications, or emergency concerns when booking.
+          </p>
 
-      {/* CONTACT */}
-      <section className="py-20 bg-white">
-        <div className="grid max-w-6xl mx-auto md:grid-cols-3 gap-6 px-6">
-          <div>
-            <MapPin />
-            {practice.location}
-          </div>
-          <div>
-            <Phone />
-            <a href="tel:2108684788">{practice.phone}</a>
-          </div>
-          <div>
-            <Mail />
-            <a href={`mailto:${practice.email}`}>{practice.email}</a>
+          <div className="mt-10 overflow-hidden rounded-3xl border bg-white shadow-sm">
+            <iframe
+              src={practice.bookingUrl}
+              width="100%"
+              height="700"
+              title="Schedule appointment with BlueOak Psychiatry PLLC"
+            />
           </div>
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="py-20 max-w-6xl mx-auto px-6">
+      <section className="bg-white py-20">
+        <div className="mx-auto grid max-w-6xl gap-6 px-6 md:grid-cols-3">
+          <div>
+            <MapPin />
+            <p className="mt-2">{practice.location}</p>
+          </div>
+
+          <div>
+            <Phone />
+            <a className="mt-2 block" href="tel:2108684788">
+              {practice.phone}
+            </a>
+          </div>
+
+          <div>
+            <Mail />
+            <a className="mt-2 block" href={`mailto:${practice.email}`}>
+              {practice.email}
+            </a>
+            <a
+              className="mt-1 block text-sm text-slate-500"
+              href={`mailto:${practice.appointmentsEmail}`}
+            >
+              {practice.appointmentsEmail}
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-6 py-20">
         <h2 className="text-3xl font-bold">FAQ</h2>
 
-        {faqs.map((f) => (
-          <div key={f.q} className="mt-4 p-4 bg-white rounded-xl">
-            <p className="font-semibold">{f.q}</p>
-            <p className="text-sm text-gray-600">{f.a}</p>
+        {faqs.map((faq) => (
+          <div key={faq.q} className="mt-4 rounded-xl bg-white p-4">
+            <p className="font-semibold">{faq.q}</p>
+            <p className="text-sm text-gray-600">{faq.a}</p>
           </div>
         ))}
       </section>
 
-      {/* FOOTER */}
-      <footer className="text-center p-6 text-sm text-gray-500">
-        {practice.name} — {practice.location}
+      <footer className="p-6 text-center text-sm text-gray-500">
+        <p>
+          {practice.name} — {practice.location}
+        </p>
+        <p className="mt-2">
+          <a href="tel:2108684788">{practice.phone}</a> ·{" "}
+          <a href={`mailto:${practice.email}`}>{practice.email}</a>
+        </p>
+        <p className="mx-auto mt-4 max-w-3xl">
+          This website is for general informational purposes only and does not
+          provide medical advice, diagnosis, or treatment. Do not submit
+          sensitive medical information through unsecured email or website forms.
+          If you are experiencing an emergency, call 911. For mental health
+          crisis support, call or text 988.
+        </p>
       </footer>
 
-      {/* FLOAT BUTTON */}
       <a
         href={practice.bookingUrl}
         target="_blank"
-        className="fixed bottom-6 right-6 bg-black text-white px-5 py-3 rounded-full"
+        rel="noopener noreferrer"
+        className="fixed bottom-6 right-6 rounded-full bg-black px-5 py-3 text-white"
       >
         Book Now
       </a>
@@ -260,10 +291,18 @@ export default function Home() {
   );
 }
 
-function Feature({ icon, title, text }: any) {
+function Feature({
+  icon,
+  title,
+  text,
+}: {
+  icon: React.ReactNode;
+  title: string;
+  text: string;
+}) {
   return (
-    <div className="flex gap-3 mb-4">
-      {icon}
+    <div className="mb-4 flex gap-3">
+      <div className="text-emerald-700">{icon}</div>
       <div>
         <p className="font-semibold">{title}</p>
         <p className="text-sm text-gray-500">{text}</p>
