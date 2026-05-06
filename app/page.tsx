@@ -19,7 +19,7 @@ import {
 const practice = {
   name: "BlueOak Psychiatry PLLC",
   brand: "BlueOaks Health",
-  phone: "(210) 868-4788",
+  phone: "(210) 981-5702",
   email: "info@blueoakshealth.com",
   appointmentsEmail: "appointments@blueoakshealth.com",
   bookingUrl: "https://calendly.com/blueoakspsych/30min",
