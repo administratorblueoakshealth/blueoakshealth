@@ -30,7 +30,7 @@ const practice = {
   patientPortalUrl: "https://www.optimantra.com/optimus/om/patient/login",
   location: "San Antonio, TX",
   serviceArea:
-    "Home visits in San Antonio · Outpatient services · Telehealth across Texas",
+    "Home visits in San Antonio, Boerne, New Braunfels, Schertz, Cibolo, Seguin, Helotes, Kerrville, and telehealth throughout Texas · Outpatient services · Telehealth across Texas",
 };
 
 const team = [
@@ -145,7 +145,7 @@ const faqs = [
   },
   {
     q: "What insurance plans do you accept?",
-    a: "BlueOak Psychiatry currently accepts Medicare, Blue Cross Blue Shield of Texas, and Cigna / Evernorth. Additional plans, including certain Medicaid and commercial plans, are being added. Please contact the office to verify current participation.",
+    a: "BlueOak Psychiatry currently accepts Medicare, Blue Cross Blue Shield of Texas, Cigna / Evernorth, UnitedHealthcare / Optum, and Aetna. Texas Medicaid participation is coming soon. Please contact the office to verify eligibility and participation status.",
   },
   {
     q: "Is this website for emergencies?",
@@ -205,7 +205,7 @@ export default function Home() {
             </p>
 
             <p className="mb-5 inline-flex rounded-full bg-blue-100 px-4 py-1 text-sm font-semibold text-blue-800">
-              Medicare • BCBSTX • Cigna Accepted
+              Major Insurance Plans Accepted
             </p>
 
             <h1 className="max-w-3xl text-4xl font-bold tracking-tight text-slate-950 md:text-6xl">
@@ -215,8 +215,8 @@ export default function Home() {
             <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600">
               {practice.name} provides accessible psychiatric care through home
               visits, outpatient services, and telehealth appointments. Medicare,
-              Blue Cross Blue Shield of Texas, and Cigna / Evernorth are
-              accepted.
+              Blue Cross Blue Shield of Texas, Cigna / Evernorth, UnitedHealthcare /
+              Optum, and Aetna are accepted.
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -456,7 +456,8 @@ export default function Home() {
             <h2 className="text-3xl font-bold">Services</h2>
             <p className="mt-4 leading-7 text-slate-600">
               Services may vary by clinical need, location, provider
-              availability, and patient eligibility.
+              availability, and patient eligibility. Psychiatric services may
+              also be available in assisted living and skilled nursing facilities.
             </p>
           </div>
 
@@ -508,10 +509,7 @@ export default function Home() {
             <div className="max-w-3xl">
               <h2 className="text-3xl font-bold">Insurance & Payment</h2>
               <p className="mt-4 leading-7 text-slate-600">
-                BlueOak Psychiatry PLLC currently accepts Medicare, Blue Cross
-                Blue Shield of Texas, and Cigna / Evernorth. Additional
-                commercial and Medicaid plans are being added. Please contact
-                the office to verify coverage and eligibility.
+                BlueOak Psychiatry currently accepts Medicare, Blue Cross Blue Shield of Texas, Cigna / Evernorth, UnitedHealthcare / Optum, and Aetna. Texas Medicaid participation is coming soon. Please contact the office to verify current participation and eligibility.
               </p>
             </div>
 
