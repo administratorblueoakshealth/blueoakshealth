@@ -84,8 +84,8 @@ const insurance = [
   "Medicare accepted",
   "Blue Cross Blue Shield of Texas accepted",
   "Cigna / Evernorth accepted",
-  "UnitedHealthcare / Optum credentialing in progress",
-  "Aetna credentialing in progress",
+  "UnitedHealthcare / Optum accepted",
+  "Aetna accepted",
   "Texas Medicaid plans coming soon",
   "Self-pay options available",
 ];
