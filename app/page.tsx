@@ -200,13 +200,15 @@ export default function Home() {
 
         <div className="relative mx-auto grid max-w-7xl gap-12 px-6 py-24 md:grid-cols-2 md:items-center">
           <div>
-            <p className="mb-5 inline-flex rounded-full bg-emerald-100 px-4 py-1 text-sm font-semibold text-emerald-800">
-              Psychiatric care in San Antonio and across Texas
-            </p>
+            <div className="mb-5 flex flex-col items-start gap-3">
+              <p className="inline-flex rounded-full bg-emerald-100 px-4 py-1 text-sm font-semibold text-emerald-800">
+                Psychiatric care in San Antonio and across Texas
+              </p>
 
-            <p className="mb-5 inline-flex rounded-full bg-blue-100 px-4 py-1 text-sm font-semibold text-blue-800">
-              Major Insurance Plans Accepted
-            </p>
+              <p className="inline-flex rounded-full bg-blue-100 px-4 py-1 text-sm font-semibold text-blue-800">
+                Major Insurance Plans Accepted
+              </p>
+            </div>
 
             <h1 className="max-w-3xl text-4xl font-bold tracking-tight text-slate-950 md:text-6xl">
               Mental health care at home, outpatient, and online.
