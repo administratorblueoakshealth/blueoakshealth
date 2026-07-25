@@ -1,0 +1,23 @@
+export type Facility = {
+  id: string;
+  name: string;
+  facility_type: string | null;
+  address: string | null;
+  city: string | null;
+  state: string | null;
+  zip: string | null;
+  county: string | null;
+  phone: string | null;
+  website: string | null;
+  source_name: string | null;
+  source_id: string | null;
+  license_number: string | null;
+  bed_count: number | null;
+  relationship_stage: string | null;
+  referral_potential: number | null;
+  priority_score: number | null;
+  ai_summary: string | null;
+  ai_next_action: string | null;
+  last_visit_at: string | null;
+  next_follow_up_at: string | null;
+};
